@@ -36,6 +36,7 @@ var bookableDate validator.Func = func(fl validator.FieldLevel) bool {
 func main() {
 	route := gin.Default()
 
+	// 1. 添加验证期验证参数
 	if v, ok := binding.Validator.Engine().(*validator.Validate); ok {
 		v.RegisterValidation("bookabledate", bookableDate)
 	}
